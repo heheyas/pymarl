@@ -22,9 +22,13 @@ RUN curl -sk https://raw.githubusercontent.com/torch/distro/master/install-deps 
 RUN apt-get update
 RUN apt-get -y install python3
 RUN apt-get -y install python3-pip
+# RUN apt-get -y install python-pip
 RUN pip3 install --upgrade pip
 
+RUN curl -fsSL -o- https://bootstrap.pypa.io/pip/3.5/get-pip.py | python3.5
+
 # Python packages we use (or used at one point...)
+# RUN pip3 install --upgrade "pip < 21.0"
 RUN pip3 install numpy scipy pyyaml matplotlib
 RUN pip3 install imageio
 RUN pip3 install tensorboard-logger
@@ -36,7 +40,8 @@ WORKDIR /install
 RUN pip3 install jsonpickle==0.9.6
 # install Sacred (from OxWhirl fork)
 RUN pip3 install setuptools
-RUN git clone https://github.com/oxwhirl/sacred.git /install/sacred && cd /install/sacred && python3 setup.py install
+RUN pip3 install wrapt && pip3 install munch
+RUN git clone https://github.com/oxwhirl/sacred.git /install/sacred && cd /install/sacred && pip3 install -e .
 
 #### -------------------------------------------------------------------
 #### install pytorch

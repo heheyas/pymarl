@@ -1,0 +1,31 @@
+env: overcooked
+env_args:
+  env_config:
+    env_params:
+      horizon: 400
+    mdp_params:
+      layout_name: cramped_room
+      rew_shaping_params:
+        DISH_DISP_DISTANCE_REW: 0
+        DISH_PICKUP_REWARD: 3
+        PLACEMENT_IN_POT_REW: 3
+        POT_DISTANCE_REW: 0
+        SOUP_DISTANCE_REW: 0
+        SOUP_PICKUP_REWARD: 5
+    multi_agent_params:
+      bc_schedule:
+      - - 0
+        - 0
+      - - .inf
+        - 0
+      reward_shaping_factor: 1.0
+      reward_shaping_horizon: 2500000
+      use_phi: false
+
+test_greedy: True
+test_nepisode: 32
+test_interval: 10000
+log_interval: 10000
+runner_log_interval: 10000
+learner_log_interval: 10000
+t_max: 10000000

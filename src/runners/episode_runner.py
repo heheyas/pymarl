@@ -1,3 +1,4 @@
+from matplotlib.pyplot import isinteractive
 from envs import REGISTRY as env_REGISTRY
 from functools import partial
 from components.episode_buffer import EpisodeBatch
@@ -12,11 +13,14 @@ class EpisodeRunner:
         self.batch_size = self.args.batch_size_run
         assert self.batch_size == 1
 
+        # print(self.args.env_args.keys())
         self.env = env_REGISTRY[self.args.env](**self.args.env_args)
         self.episode_limit = self.env.episode_limit
         self.t = 0
 
         self.t_env = 0
+        
+        self.reserved_keys = set(["phi", "phi_s"])
 
         self.train_returns = []
         self.test_returns = []
@@ -52,6 +56,7 @@ class EpisodeRunner:
         episode_return = 0
         self.mac.init_hidden(batch_size=self.batch_size)
 
+        # collect data for one episode
         while not terminated:
 
             pre_transition_data = {
@@ -72,6 +77,7 @@ class EpisodeRunner:
             post_transition_data = {
                 "actions": actions,
                 "reward": [(reward,)],
+                #NOTE check "episode_limit" in env_info
                 "terminated": [(terminated != env_info.get("episode_limit", False),)],
             }
 
@@ -93,7 +99,14 @@ class EpisodeRunner:
         cur_stats = self.test_stats if test_mode else self.train_stats
         cur_returns = self.test_returns if test_mode else self.train_returns
         log_prefix = "test_" if test_mode else ""
-        cur_stats.update({k: cur_stats.get(k, 0) + env_info.get(k, 0) for k in set(cur_stats) | set(env_info)})
+        
+        #TODO fix dict merge bug
+        def merge(a, b):
+            if isinstance(a, dict):
+                return a if len(a) > len(b) else b
+            else:
+                return a + b
+        cur_stats.update({k: merge(env_info.get(k, 0),  cur_stats.get(k, type(env_info.get(k, 0))())) for k in set(cur_stats) | set(env_info)})
         cur_stats["n_episodes"] = 1 + cur_stats.get("n_episodes", 0)
         cur_stats["ep_length"] = self.t + cur_stats.get("ep_length", 0)
 
@@ -118,6 +131,6 @@ class EpisodeRunner:
         returns.clear()
 
         for k, v in stats.items():
-            if k != "n_episodes":
+            if k != "n_episodes" and not isinstance(v, dict) and not isinstance(v, list):
                 self.logger.log_stat(prefix + k + "_mean" , v/stats["n_episodes"], self.t_env)
         stats.clear()

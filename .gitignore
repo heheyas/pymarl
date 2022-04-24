@@ -1,0 +1,5 @@
+__MACOSX/*
+3rdparty/*
+.vscode/*
+*.pyc
+results/*
