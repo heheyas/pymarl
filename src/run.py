@@ -8,7 +8,7 @@ from types import SimpleNamespace as SN
 from utils.logging import Logger
 from utils.timehelper import time_left, time_str
 from os.path import dirname, abspath
-
+import wandb
 from learners import REGISTRY as le_REGISTRY
 from runners import REGISTRY as r_REGISTRY
 from controllers import REGISTRY as mac_REGISTRY
@@ -39,8 +39,17 @@ def run(_run, _config, _log):
     if args.use_tensorboard:
         tb_logs_direc = os.path.join(dirname(dirname(abspath(__file__))), "results", "tb_logs")
         tb_exp_direc = os.path.join(tb_logs_direc, "{}").format(unique_token)
+        algo_name = _config["name"]
+        layout_name = _config["env_args"]["env_config"]["mdp_params"]["layout_name"]
+        agent_name = _config["agent"]
+        
+        tags = [algo_name, layout_name, agent_name, "pymarl"]
+        
+        name = f"{algo_name}_{layout_name}_{agent_name}_{_run._id}"
+        wandb.init(project="overcooked-marl", name=name, tags=tags)
+        wandb.tensorboard.patch(root_logdir=tb_exp_direc)
         logger.setup_tb(tb_exp_direc)
-
+        
     # sacred is on by default
     logger.setup_sacred(_run)
 

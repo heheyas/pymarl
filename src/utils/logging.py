@@ -2,6 +2,7 @@ from collections import defaultdict
 import logging
 import numpy as np
 import torch as th
+import wandb
 
 class Logger:
     def __init__(self, console_logger):
@@ -29,6 +30,7 @@ class Logger:
 
         if self.use_tb:
             self.tb_logger(key, value, t)
+            wandb.log({key: value}, step=t)
 
         if self.use_sacred and to_sacred:
             if key in self.sacred_info:

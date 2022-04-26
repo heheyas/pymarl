@@ -100,15 +100,9 @@ class EpisodeRunner:
         cur_returns = self.test_returns if test_mode else self.train_returns
         log_prefix = "test_" if test_mode else ""
         
-        #TODO fix dict merge bug
-        def merge(a, b):
-            if isinstance(a, dict):
-                return a if len(a) > len(b) else b
-            else:
-                return a + b
-        cur_stats.update({k: merge(env_info.get(k, 0),  cur_stats.get(k, type(env_info.get(k, 0))())) for k in set(cur_stats) | set(env_info)})
+        cur_stats.update({k: env_info.get(k, 0) + env_info.get(k, 0) for k in set(cur_stats) | set(env_info)})
         cur_stats["n_episodes"] = 1 + cur_stats.get("n_episodes", 0)
-        cur_stats["ep_length"] = self.t + cur_stats.get("ep_length", 0)
+        cur_stats["ep_length"] = self.t 
 
         if not test_mode:
             self.t_env += self.t

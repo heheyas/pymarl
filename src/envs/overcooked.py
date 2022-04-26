@@ -165,8 +165,13 @@ class OvercookedPyMarl(MultiAgentEnv):
         reward = sum(rewards) / len(rewards)
         dones = done
         infos = info
-        del infos["phi_s"]
-        del infos["phi_s_prime"]
+        if "episode" in infos.keys():
+            infos = infos["episode"]
+            del infos["ep_game_stats"]
+            del infos["ep_shaped_r_by_agent"]
+            del infos["ep_sparse_r_by_agent"]
+        else:
+            infos = {}
         return reward, dones, infos
     
     def seed(self):

@@ -10,6 +10,7 @@ import sys
 import torch as th
 from utils.logging import get_logger
 import yaml
+import wandb
 
 from run import run
 
@@ -27,6 +28,7 @@ results_path = os.path.join(dirname(dirname(abspath(__file__))), "results")
 def my_main(_run, _config, _log):
     # Setting the random seed throughout the modules
     config = config_copy(_config)
+    
     np.random.seed(config["seed"])
     th.manual_seed(config["seed"])
     config['env_args']['seed'] = config["seed"]
@@ -94,6 +96,5 @@ if __name__ == '__main__':
     logger.info("Saving to FileStorageObserver in results/sacred.")
     file_obs_path = os.path.join(results_path, "sacred")
     ex.observers.append(FileStorageObserver.create(file_obs_path))
-
     ex.run_commandline(params)
 

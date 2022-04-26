@@ -3,3 +3,5 @@ __MACOSX/*
 .vscode/*
 *.pyc
 results/*
+wandb/*
+src/wandb/*

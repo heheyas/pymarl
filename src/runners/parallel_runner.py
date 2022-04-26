@@ -170,13 +170,13 @@ class ParallelRunner:
             self.t_env += self.env_steps_this_run
 
         # Get stats back for each env
-        for parent_conn in self.parent_conns:
-            parent_conn.send(("get_stats",None))
+        # for parent_conn in self.parent_conns:
+        #     parent_conn.send(("get_stats",None))
 
-        env_stats = []
-        for parent_conn in self.parent_conns:
-            env_stat = parent_conn.recv()
-            env_stats.append(env_stat)
+        # env_stats = []
+        # for parent_conn in self.parent_conns:
+        #     env_stat = parent_conn.recv()
+        #     env_stats.append(env_stat)
 
         cur_stats = self.test_stats if test_mode else self.train_stats
         cur_returns = self.test_returns if test_mode else self.train_returns
@@ -184,7 +184,7 @@ class ParallelRunner:
         infos = [cur_stats] + final_env_infos
         cur_stats.update({k: sum(d.get(k, 0) for d in infos) for k in set.union(*[set(d) for d in infos])})
         cur_stats["n_episodes"] = self.batch_size + cur_stats.get("n_episodes", 0)
-        cur_stats["ep_length"] = sum(episode_lengths) + cur_stats.get("ep_length", 0)
+        cur_stats["ep_length"] = sum(episode_lengths) 
 
         cur_returns.extend(episode_returns)
 
