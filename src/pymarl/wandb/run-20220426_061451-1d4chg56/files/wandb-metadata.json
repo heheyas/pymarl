@@ -1,0 +1,27 @@
+{
+    "os": "Linux-4.15.0-169-generic-x86_64-with-debian-buster-sid",
+    "python": "3.7.11",
+    "heartbeatAt": "2022-04-26T06:14:57.621589",
+    "startedAt": "2022-04-26T06:14:51.662708",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpu_count": 2,
+    "cpu_count": 48,
+    "cuda": null,
+    "args": [
+        "--env-config=overcooked",
+        "--config=qmix_beta"
+    ],
+    "state": "running",
+    "program": "/opt/czl/libs/pymarl/src/main.py",
+    "codePath": "src/main.py",
+    "git": {
+        "remote": "git@github.com:heheyas/pymarl.git",
+        "commit": "f3df5e913eb8400368a6835c20027a7d60933347"
+    },
+    "email": "916973364@qq.com",
+    "root": "/opt/czl/libs/pymarl",
+    "host": "dell",
+    "username": "czl",
+    "executable": "/opt/czl/anaconda3/envs/harl_modified/bin/python"
+}
