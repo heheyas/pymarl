@@ -3,7 +3,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 from a2c_ppo_acktr.utils import init
 
-
 class RNNAgent(nn.Module):
     def __init__(self, input_shape, args):
         super(RNNAgent, self).__init__()
@@ -23,11 +22,12 @@ class RNNAgent(nn.Module):
         h = self.rnn(x, h_in)
         q = self.fc2(h)
         return q, h
-
-    # def forward(self, inputs, hidden_state):
-    #     x = F.relu(self.fc1(inputs))
-    #     q = self.fc2(x)
-    #     return q, hidden_state
+    
+class MLPAgent(RNNAgent):
+    def forward(self, inputs, hidden_state):
+        x = F.relu(self.fc1(inputs))
+        q = self.fc2(x)
+        return q, hidden_state
 
 class CNNAgent(nn.Module):
     def __init__(self, input_shape, args):

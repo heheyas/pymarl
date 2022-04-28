@@ -1,0 +1,14 @@
+session_name: run-all
+windows:
+- panes:
+  - conda activate harl_modified && python src/main.py --config=qmix --env-config=overcooked
+    with agent=rnn env_args.env_config.mdp_params.layout_name=forced_coordination
+    seed=0
+  - conda activate harl_modified && python src/main.py --config=qmix --env-config=overcooked
+    with agent=rnn env_args.env_config.mdp_params.layout_name=coordination_ring seed=0
+  - conda activate harl_modified && python src/main.py --config=qmix --env-config=overcooked
+    with agent=mlp env_args.env_config.mdp_params.layout_name=forced_coordination
+    seed=0
+  - conda activate harl_modified && python src/main.py --config=qmix --env-config=overcooked
+    with agent=mlp env_args.env_config.mdp_params.layout_name=coordination_ring seed=0
+  window_name: seed-0
