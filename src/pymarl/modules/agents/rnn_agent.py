@@ -48,7 +48,7 @@ class CNNAgent(nn.Module):
         
         with torch.no_grad():
             n_flatten = self.cnn(
-                torch.as_tensor(torch.zeros(*input_shape)).float()
+                torch.as_tensor(torch.zeros(*input_shape))[None].float()
             ).shape[1]
             
         self.linear = nn.Sequential(
@@ -56,23 +56,23 @@ class CNNAgent(nn.Module):
             nn.LeakyReLU(),
             init_(nn.Linear(32, 32)),
             nn.LeakyReLU(),
-            init_(nn.Linear(32, args.rnn_hidden_size)),
+            init_(nn.Linear(32, args.rnn_hidden_dim)),
             nn.LeakyReLU()
         )
         
         init_ = lambda m: init(m, nn.init.orthogonal_, lambda x: nn.init.
                                constant_(x, 0))
         
-        self.critic_linear = init_(nn.Linear(args.rnn_hidden_size, 1))
+        self.critic_linear = init_(nn.Linear(args.rnn_hidden_dim, args.n_actions))
         
         self.rnn = nn.GRUCell(args.rnn_hidden_dim, args.rnn_hidden_dim)
         
     def init_hidden(self):
-        return self.fc1.weight.new(1, self.args.rnn_hidden_dim).zero_()
+        return self.critic_linear.weight.new(1, self.args.rnn_hidden_dim).zero_()
     
     def forward(self, inputs, hidden_state):
         x = self.linear(self.cnn(inputs))
-        h_in = hidden_state.reshape(-1, self.args.rnn_hidden_state)
+        h_in = hidden_state.reshape(-1, self.args.rnn_hidden_dim)
         h = self.rnn(x, h_in)
         q = self.critic_linear(h)
         return q, h

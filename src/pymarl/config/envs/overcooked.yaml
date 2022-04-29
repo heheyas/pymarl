@@ -21,6 +21,8 @@ env_args:
       reward_shaping_factor: 1.0
       reward_shaping_horizon: 2500000
       use_phi: false
+      obs_pattern: "raw"
+      state_pattern: "raw"
 
 test_greedy: True
 test_nepisode: 32

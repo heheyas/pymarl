@@ -3,5 +3,6 @@ __MACOSX/*
 .vscode/*
 *.pyc
 results/*
+src/results/*
 wandb/*
-src/wandb/*
+src/pymarl/wandb/*

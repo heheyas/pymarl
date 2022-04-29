@@ -103,7 +103,7 @@ class OvercookedPyMarl(MultiAgentEnv):
     def get_obs_size(self):
         if self.obs_pattern == "raw":
             #TODO add support for cnn agent
-            return 96
+            return self.ppo_observation_space.shape
         elif self.obs_pattern == "compat":
             return 96
         else:
@@ -112,7 +112,9 @@ class OvercookedPyMarl(MultiAgentEnv):
     def get_state_size(self):
         if self.state_pattern == "raw":
             #TODO add support for cnn agent
-            return 96
+            obs_shape = self.get_obs_size()
+            assert len(obs_shape) == 3, "raw observation should be image-like"
+            return (obs_shape[0] * 2, obs_shape[1], obs_shape[2])
         elif self.state_pattern == "compat":
             return 96 * 2
         else:
