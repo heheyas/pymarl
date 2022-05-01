@@ -1,14 +1,13 @@
 session_name: run-all
 windows:
 - panes:
-  - conda activate harl_modified && python src/main.py --config=qmix --env-config=overcooked
-    with agent=rnn env_args.env_config.mdp_params.layout_name=forced_coordination
-    seed=0
-  - conda activate harl_modified && python src/main.py --config=qmix --env-config=overcooked
-    with agent=rnn env_args.env_config.mdp_params.layout_name=coordination_ring seed=0
-  - conda activate harl_modified && python src/main.py --config=qmix --env-config=overcooked
-    with agent=mlp env_args.env_config.mdp_params.layout_name=forced_coordination
-    seed=0
-  - conda activate harl_modified && python src/main.py --config=qmix --env-config=overcooked
-    with agent=mlp env_args.env_config.mdp_params.layout_name=coordination_ring seed=0
+  - conda activate harl_modified && python src/pymarl/main.py --config=qmix --env-config=overcooked
+    with agent=cnn env_args.env_config.mdp_params.layout_name=forced_coordination
+    seed=0 buffer_size=3000 obs_agent_id=False obs_last_action=False
+  - conda activate harl_modified && python src/pymarl/main.py --config=qmix --env-config=overcooked
+    with agent=cnn env_args.env_config.mdp_params.layout_name=coordination_ring seed=0
+    buffer_size=3000 obs_agent_id=False obs_last_action=False
+  - conda activate harl_modified && python src/pymarl/main.py --config=qmix --env-config=overcooked
+    with agent=cnn env_args.env_config.mdp_params.layout_name=asymmetric_advantages
+    seed=0 buffer_size=3000 obs_agent_id=False obs_last_action=False
   window_name: seed-0

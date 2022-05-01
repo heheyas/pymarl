@@ -11,12 +11,12 @@ parser.add_argument(
 
 args = parser.parse_args()
 
-template = "conda activate harl_modified && python src/main.py --config=qmix --env-config=overcooked with agent={0} env_args.env_config.mdp_params.layout_name={1} seed={2}"
+template = "conda activate harl_modified && python src/pymarl/main.py --config=qmix --env-config=overcooked with agent={0} env_args.env_config.mdp_params.layout_name={1} seed={2} buffer_size=3000 obs_agent_id=False obs_last_action=False"
 
 config = {"session_name": "run-all", "windows": []}
 
-agent_list = ["rnn", "mlp"]
-layout_list = ["forced_coordination", "coordination_ring"]
+agent_list = ["cnn"]
+layout_list = ["forced_coordination", "coordination_ring", "asymmetric_advantages"]
 seed_list = []
 
 for i in range(args.num_seeds):

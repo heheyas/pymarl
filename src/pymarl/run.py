@@ -46,7 +46,7 @@ def run(_run, _config, _log):
         tags = [algo_name, layout_name, agent_name, "pymarl"]
         
         name = f"{algo_name}_{layout_name}_{agent_name}_{_run._id}"
-        wandb.init(project="overcooked-marl", name=name, tags=tags)
+        wandb.init(project="overcooked-marl", name=name, tags=tags, config=_config)
         wandb.tensorboard.patch(root_logdir=tb_exp_direc)
         logger.setup_tb(tb_exp_direc)
         
