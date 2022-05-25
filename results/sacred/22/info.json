@@ -1,0 +1,22 @@
+{
+  "return_mean": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 8.5
+    }
+  ],
+  "return_mean_T": [
+    400
+  ],
+  "return_std": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 0.0
+    }
+  ],
+  "return_std_T": [
+    400
+  ]
+}

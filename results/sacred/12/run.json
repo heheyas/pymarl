@@ -1,0 +1,108 @@
+{
+  "artifacts": [],
+  "command": "my_main",
+  "experiment": {
+    "base_dir": "/opt/czl/libs/pymarl/src",
+    "dependencies": [
+      "munch==2.5.0",
+      "numpy==1.21.2",
+      "PyYAML==6.0",
+      "sacred==0.8.2",
+      "torch==1.11.0"
+    ],
+    "mainfile": "main.py",
+    "name": "pymarl",
+    "repositories": [
+      {
+        "commit": "c971afdceb34635d31b778021b0ef90d7af51e86",
+        "dirty": true,
+        "url": "git@github.com:heheyas/pymarl.git"
+      },
+      {
+        "commit": "c971afdceb34635d31b778021b0ef90d7af51e86",
+        "dirty": true,
+        "url": "git@github.com:heheyas/pymarl.git"
+      },
+      {
+        "commit": "c971afdceb34635d31b778021b0ef90d7af51e86",
+        "dirty": true,
+        "url": "git@github.com:heheyas/pymarl.git"
+      }
+    ],
+    "sources": [
+      [
+        "main.py",
+        "_sources/main_2e80f10ea4fdcea08424cfdb34d34977.py"
+      ],
+      [
+        "run.py",
+        "_sources/run_ff99f0b44bae52e100e0837c81ebabb8.py"
+      ],
+      [
+        "utils/logging.py",
+        "_sources/logging_aa14e56e60b01dd7a9ddb8e6cdf36b85.py"
+      ]
+    ]
+  },
+  "heartbeat": "2022-04-20T11:48:10.777714",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Xeon(R) Silver 4214 CPU @ 2.20GHz",
+    "gpus": {
+      "driver_version": "470.103.01",
+      "gpus": [
+        {
+          "model": "NVIDIA GeForce RTX 3090",
+          "persistence_mode": false,
+          "total_memory": 24268
+        },
+        {
+          "model": "NVIDIA GeForce RTX 3090",
+          "persistence_mode": false,
+          "total_memory": 24268
+        }
+      ]
+    },
+    "hostname": "dell",
+    "os": [
+      "Linux",
+      "Linux-4.15.0-169-generic-x86_64-with-debian-buster-sid"
+    ],
+    "python_version": "3.7.11"
+  },
+  "meta": {
+    "command": "my_main",
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "env_args.map_name=2s3z"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2022-04-20T11:47:00.850467",
+  "status": "INTERRUPTED",
+  "stop_time": "2022-04-20T11:48:10.787777"
+}

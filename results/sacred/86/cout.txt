@@ -1,0 +1,112 @@
+[INFO 02:30:21] pymarl Running command 'my_main'
+[INFO 02:30:21] pymarl Started run with ID "86"
+[DEBUG 02:30:21] pymarl Starting Heartbeat
+[DEBUG 02:30:21] my_main Started
+[INFO 02:30:21] my_main Experiment Parameters:
+[INFO 02:30:21] my_main 
+
+{   'action_selector': 'epsilon_greedy',
+    'agent': 'rnn',
+    'agent_output_type': 'q',
+    'batch_size': 128,
+    'batch_size_run': 1,
+    'buffer_cpu_only': True,
+    'buffer_size': 5000,
+    'checkpoint_path': '',
+    'critic_lr': 0.001,
+    'double_q': True,
+    'env': 'overcooked',
+    'env_args': {   'env_config': {   'env_params': {   'horizon': 400},
+                                      'mdp_params': {   'layout_name': 'cramped_room',
+                                                        'rew_shaping_params': {   'DISH_DISP_DISTANCE_REW': 0,
+                                                                                  'DISH_PICKUP_REWARD': 3,
+                                                                                  'PLACEMENT_IN_POT_REW': 3,
+                                                                                  'POT_DISTANCE_REW': 0,
+                                                                                  'SOUP_DISTANCE_REW': 0,
+                                                                                  'SOUP_PICKUP_REWARD': 5}},
+                                      'multi_agent_params': {   'bc_schedule': [   [   0,
+                                                                                       0],
+                                                                                   [   inf,
+                                                                                       0]],
+                                                                'reward_shaping_factor': 1.0,
+                                                                'reward_shaping_horizon': 2500000,
+                                                                'use_phi': False}},
+                    'seed': 406686518},
+    'epsilon_anneal_time': 5000000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'gamma': 0.99,
+    'grad_norm_clip': 10,
+    'hypernet_embed': 64,
+    'hypernet_layers': 2,
+    'label': 'default_label',
+    'learner': 'q_learner',
+    'learner_log_interval': 10000,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 10000,
+    'lr': 0.001,
+    'mac': 'basic_mac',
+    'mixer': 'qmix',
+    'mixing_embed_dim': 32,
+    'name': 'qmix',
+    'obs_agent_id': True,
+    'obs_last_action': True,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'repeat_id': 1,
+    'rnn_hidden_dim': 32,
+    'runner': 'episode',
+    'runner_log_interval': 10000,
+    'save_model': True,
+    'save_model_interval': 2000000,
+    'save_replay': False,
+    'seed': 406686518,
+    't_max': 10000000,
+    'target_update_interval': 200,
+    'test_greedy': True,
+    'test_interval': 10000,
+    'test_nepisode': 32,
+    'use_cuda': True,
+    'use_tensorboard': True}
+
+[DEBUG 02:30:21] git.cmd Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/opt/czl/libs/pymarl, universal_newlines=False, shell=None, istream=None)
+[DEBUG 02:30:21] urllib3.connectionpool Starting new HTTPS connection (1): api.wandb.ai:443
+[DEBUG 02:30:21] urllib3.connectionpool https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 484
+[DEBUG 02:30:21] urllib3.connectionpool Starting new HTTPS connection (1): api.wandb.ai:443
+[DEBUG 02:30:22] urllib3.connectionpool https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 334
+wandb: Currently logged in as: hehey (use `wandb login --relogin` to force relogin)
+[DEBUG 02:30:22] git.cmd Popen(['git', 'cat-file', '--batch-check'], cwd=/opt/czl/libs/pymarl, universal_newlines=False, shell=None, istream=<valid stream>)
+wandb: wandb version 0.12.15 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.12
+wandb: Run data is saved locally in /opt/czl/libs/pymarl/wandb/run-20220429_023022-pze0olul
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run qmix_cramped_room_rnn_86
+wandb: ⭐️ View project at https://wandb.ai/hehey/overcooked-marl
+wandb: 🚀 View run at https://wandb.ai/hehey/overcooked-marl/runs/pze0olul
+Process wandb_internal:
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/site-packages/wandb/sdk/internal/internal.py", line 162, in wandb_internal
+    thread.join()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/threading.py", line 1044, in join
+    self._wait_for_tstate_lock()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/threading.py", line 1060, in _wait_for_tstate_lock
+    elif lock.acquire(block, timeout):
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/spawn.py", line 105, in spawn_main
+    exitcode = _main(fd)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/spawn.py", line 118, in _main
+    return self._bootstrap()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 315, in _bootstrap
+    threading._shutdown()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/threading.py", line 1307, in _shutdown
+    lock.acquire()
+KeyboardInterrupt

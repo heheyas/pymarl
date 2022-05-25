@@ -1,0 +1,93 @@
+[INFO 10:30:32] pymarl Running command 'my_main'
+[INFO 10:30:32] pymarl Started run with ID "45"
+[DEBUG 10:30:32] pymarl Starting Heartbeat
+[DEBUG 10:30:32] my_main Started
+[DEBUG 10:30:32] git.cmd Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/opt/czl/libs/pymarl, universal_newlines=False, shell=None, istream=None)
+[DEBUG 10:30:34] urllib3.connectionpool Starting new HTTPS connection (1): api.wandb.ai:443
+[DEBUG 10:30:35] urllib3.connectionpool https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 484
+[DEBUG 10:30:35] urllib3.connectionpool Starting new HTTPS connection (1): api.wandb.ai:443
+[DEBUG 10:30:35] urllib3.connectionpool https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 334
+wandb: Currently logged in as: hehey (use `wandb login --relogin` to force relogin)
+[DEBUG 10:30:35] git.cmd Popen(['git', 'cat-file', '--batch-check'], cwd=/opt/czl/libs/pymarl, universal_newlines=False, shell=None, istream=<valid stream>)
+wandb: wandb version 0.12.15 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.12
+wandb: Run data is saved locally in /opt/czl/libs/pymarl/src/wandb/run-20220425_103035-ko7iugiz
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run qmix_parallel_cramped_room_rnn+45
+wandb: ⭐️ View project at https://wandb.ai/hehey/overcooked-marl
+wandb: 🚀 View run at https://wandb.ai/hehey/overcooked-marl/runs/ko7iugiz
+[INFO 10:30:43] my_main Experiment Parameters:
+[INFO 10:30:43] my_main 
+
+{   'action_selector': 'epsilon_greedy',
+    'agent': 'rnn',
+    'agent_output_type': 'q',
+    'batch_size': 128,
+    'batch_size_run': 30,
+    'buffer_cpu_only': True,
+    'buffer_size': 5000,
+    'checkpoint_path': '',
+    'critic_lr': 0.001,
+    'double_q': True,
+    'env': 'overcooked',
+    'env_args': {   'env_config': {   'env_params': {   'horizon': 400},
+                                      'mdp_params': {   'layout_name': 'cramped_room',
+                                                        'rew_shaping_params': {   'DISH_DISP_DISTANCE_REW': 0,
+                                                                                  'DISH_PICKUP_REWARD': 3,
+                                                                                  'PLACEMENT_IN_POT_REW': 3,
+                                                                                  'POT_DISTANCE_REW': 0,
+                                                                                  'SOUP_DISTANCE_REW': 0,
+                                                                                  'SOUP_PICKUP_REWARD': 5}},
+                                      'multi_agent_params': {   'bc_schedule': [   [   0,
+                                                                                       0],
+                                                                                   [   inf,
+                                                                                       0]],
+                                                                'reward_shaping_factor': 1.0,
+                                                                'reward_shaping_horizon': 2500000,
+                                                                'use_phi': False}},
+                    'seed': 293919782},
+    'epsilon_anneal_time': 5000000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'gamma': 0.99,
+    'grad_norm_clip': 10,
+    'hypernet_embed': 64,
+    'hypernet_layers': 2,
+    'label': 'default_label',
+    'learner': 'q_learner',
+    'learner_log_interval': 10000,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 10000,
+    'lr': 0.001,
+    'mac': 'basic_mac',
+    'mixer': 'qmix',
+    'mixing_embed_dim': 32,
+    'name': 'qmix_parallel',
+    'obs_agent_id': True,
+    'obs_last_action': True,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'repeat_id': 1,
+    'rnn_hidden_dim': 32,
+    'runner': 'parallel',
+    'runner_log_interval': 10000,
+    'save_model': False,
+    'save_model_interval': 2000000,
+    'save_replay': False,
+    'seed': 293919782,
+    't_max': 10000000,
+    'target_update_interval': 200,
+    'test_greedy': True,
+    'test_interval': 10000,
+    'test_nepisode': 30,
+    'use_cuda': True,
+    'use_tensorboard': True}
+
+[INFO 10:30:48] my_main Beginning training for 10000000 timesteps
+/opt/czl/libs/pymarl/src/components/episode_buffer.py:103: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  /opt/conda/conda-bld/pytorch_1646755953518/work/torch/csrc/utils/tensor_new.cpp:210.)
+  v = th.tensor(v, dtype=dtype, device=self.device)
+/opt/czl/libs/pymarl/src/components/episode_buffer.py:103: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  v = th.tensor(v, dtype=dtype, device=self.device)

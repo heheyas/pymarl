@@ -1,0 +1,100 @@
+[INFO 12:20:43] pymarl Running command 'my_main'
+[INFO 12:20:43] pymarl Started run with ID "34"
+[DEBUG 12:20:43] pymarl Starting Heartbeat
+[DEBUG 12:20:43] my_main Started
+[INFO 12:20:43] my_main Experiment Parameters:
+[INFO 12:20:43] my_main 
+
+{   'action_selector': 'epsilon_greedy',
+    'agent': 'rnn',
+    'agent_output_type': 'q',
+    'batch_size': 128,
+    'batch_size_run': 1,
+    'buffer_cpu_only': True,
+    'buffer_size': 5000,
+    'checkpoint_path': '',
+    'critic_lr': 0.001,
+    'double_q': True,
+    'env': 'overcooked',
+    'env_args': {   'env_config': {   'env_params': {   'horizon': 400},
+                                      'mdp_params': {   'layout_name': 'cramped_room',
+                                                        'rew_shaping_params': {   'DISH_DISP_DISTANCE_REW': 0,
+                                                                                  'DISH_PICKUP_REWARD': 3,
+                                                                                  'PLACEMENT_IN_POT_REW': 3,
+                                                                                  'POT_DISTANCE_REW': 0,
+                                                                                  'SOUP_DISTANCE_REW': 0,
+                                                                                  'SOUP_PICKUP_REWARD': 5}},
+                                      'multi_agent_params': {   'bc_schedule': [   [   0,
+                                                                                       0],
+                                                                                   [   inf,
+                                                                                       0]],
+                                                                'reward_shaping_factor': 1.0,
+                                                                'reward_shaping_horizon': 2500000,
+                                                                'use_phi': False}},
+                    'seed': 626252438},
+    'epsilon_anneal_time': 50000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'gamma': 0.99,
+    'grad_norm_clip': 10,
+    'hypernet_embed': 64,
+    'hypernet_layers': 2,
+    'label': 'default_label',
+    'learner': 'q_learner',
+    'learner_log_interval': 10000,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 10000,
+    'lr': 0.001,
+    'mac': 'basic_mac',
+    'mixer': 'qmix',
+    'mixing_embed_dim': 32,
+    'name': 'qmix',
+    'obs_agent_id': True,
+    'obs_last_action': True,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'repeat_id': 1,
+    'rnn_hidden_dim': 32,
+    'runner': 'episode',
+    'runner_log_interval': 10000,
+    'save_model': False,
+    'save_model_interval': 2000000,
+    'save_replay': False,
+    'seed': 626252438,
+    't_max': 2050000,
+    'target_update_interval': 200,
+    'test_greedy': True,
+    'test_interval': 10000,
+    'test_nepisode': 32,
+    'use_cuda': True,
+    'use_tensorboard': False}
+
+[INFO 12:20:48] my_main Beginning training for 2050000 timesteps
+/opt/czl/libs/pymarl/src/components/episode_buffer.py:103: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  /opt/conda/conda-bld/pytorch_1646755953518/work/torch/csrc/utils/tensor_new.cpp:210.)
+  v = th.tensor(v, dtype=dtype, device=self.device)
+/opt/czl/libs/pymarl/src/components/episode_buffer.py:103: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  v = th.tensor(v, dtype=dtype, device=self.device)
+[INFO 12:20:50] my_main t_env: 400 / 2050000
+[INFO 12:20:50] my_main Estimated time left: 9 minutes, 23 seconds. Time passed: 2 seconds
+[INFO 12:22:25] my_main Recent Stats | t_env:      10000 | Episode:       25
+ep_length_mean:          400.0000	epsilon:                   1.0000	return_mean:               4.5000	return_std:                0.0000
+test_ep_length_mean:     400.0000	test_return_mean:          0.0000	test_return_std:           0.0000	
+[INFO 12:22:27] my_main t_env: 10400 / 2050000
+[INFO 12:22:27] my_main Estimated time left: 5 hours, 27 minutes, 10 seconds. Time passed: 1 minutes, 39 seconds
+[INFO 12:23:56] my_main Recent Stats | t_env:      20000 | Episode:       50
+ep_length_mean:          400.0000	epsilon:                   0.8100	return_mean:               3.9500	return_std:                0.8916
+test_ep_length_mean:     400.0000	test_return_mean:          0.0000	test_return_std:           0.0000	
+[INFO 12:23:58] my_main t_env: 20400 / 2050000
+[INFO 12:23:58] my_main Estimated time left: 5 hours, 7 minutes, 34 seconds. Time passed: 3 minutes, 10 seconds
+[INFO 12:25:27] my_main Recent Stats | t_env:      30000 | Episode:       75
+ep_length_mean:          400.0000	epsilon:                   0.6200	return_mean:               3.6867	return_std:                1.3786
+test_ep_length_mean:     400.0000	test_return_mean:          0.0000	test_return_std:           0.0000	
+[INFO 12:25:29] my_main t_env: 30400 / 2050000
+[INFO 12:25:29] my_main Estimated time left: 5 hours, 6 minutes, 14 seconds. Time passed: 4 minutes, 41 seconds
+[INFO 12:27:03] my_main Recent Stats | t_env:      40000 | Episode:      100
+ep_length_mean:          400.0000	epsilon:                   0.4300	return_mean:               3.0350	return_std:                1.3780
+test_ep_length_mean:     400.0000	test_return_mean:          0.0000	test_return_std:           0.0000	
+[INFO 12:27:04] my_main t_env: 40400 / 2050000
+[INFO 12:27:04] my_main Estimated time left: 5 hours, 20 minutes, 28 seconds. Time passed: 6 minutes, 16 seconds

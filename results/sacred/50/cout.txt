@@ -1,0 +1,467 @@
+[INFO 04:40:11] pymarl Running command 'my_main'
+[INFO 04:40:11] pymarl Started run with ID "50"
+[DEBUG 04:40:11] pymarl Starting Heartbeat
+[DEBUG 04:40:11] my_main Started
+[INFO 04:40:11] my_main Experiment Parameters:
+[INFO 04:40:11] my_main 
+
+{   'action_selector': 'epsilon_greedy',
+    'agent': 'rnn',
+    'agent_output_type': 'q',
+    'batch_size': 128,
+    'batch_size_run': 25,
+    'buffer_cpu_only': True,
+    'buffer_size': 125000,
+    'checkpoint_path': '',
+    'critic_lr': 0.001,
+    'double_q': True,
+    'env': 'overcooked',
+    'env_args': {   'env_config': {   'env_params': {   'horizon': 400},
+                                      'mdp_params': {   'layout_name': 'cramped_room',
+                                                        'rew_shaping_params': {   'DISH_DISP_DISTANCE_REW': 0,
+                                                                                  'DISH_PICKUP_REWARD': 3,
+                                                                                  'PLACEMENT_IN_POT_REW': 3,
+                                                                                  'POT_DISTANCE_REW': 0,
+                                                                                  'SOUP_DISTANCE_REW': 0,
+                                                                                  'SOUP_PICKUP_REWARD': 5}},
+                                      'multi_agent_params': {   'bc_schedule': [   [   0,
+                                                                                       0],
+                                                                                   [   inf,
+                                                                                       0]],
+                                                                'reward_shaping_factor': 1.0,
+                                                                'reward_shaping_horizon': 2500000,
+                                                                'use_phi': False}},
+                    'seed': 717570682},
+    'epsilon_anneal_time': 5000000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'gamma': 0.99,
+    'grad_norm_clip': 10,
+    'hypernet_embed': 64,
+    'hypernet_layers': 2,
+    'label': 'default_label',
+    'learner': 'q_learner',
+    'learner_log_interval': 10000,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 10000,
+    'lr': 0.001,
+    'mac': 'basic_mac',
+    'mixer': 'qmix',
+    'mixing_embed_dim': 32,
+    'name': 'qmix_parallel',
+    'obs_agent_id': True,
+    'obs_last_action': True,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'repeat_id': 1,
+    'rnn_hidden_dim': 32,
+    'runner': 'parallel',
+    'runner_log_interval': 10000,
+    'save_model': True,
+    'save_model_interval': 2000000,
+    'save_replay': False,
+    'seed': 717570682,
+    't_max': 10000000,
+    'target_update_interval': 200,
+    'test_greedy': True,
+    'test_interval': 10000,
+    'test_nepisode': 25,
+    'use_cuda': True,
+    'use_tensorboard': True}
+
+[DEBUG 04:40:12] git.cmd Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/opt/czl/libs/pymarl, universal_newlines=False, shell=None, istream=None)
+[DEBUG 04:40:12] urllib3.connectionpool Starting new HTTPS connection (1): api.wandb.ai:443
+[DEBUG 04:40:12] urllib3.connectionpool https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 484
+[DEBUG 04:40:12] urllib3.connectionpool Starting new HTTPS connection (1): api.wandb.ai:443
+[DEBUG 04:40:12] urllib3.connectionpool https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 334
+wandb: Currently logged in as: hehey (use `wandb login --relogin` to force relogin)
+[DEBUG 04:40:13] git.cmd Popen(['git', 'cat-file', '--batch-check'], cwd=/opt/czl/libs/pymarl, universal_newlines=False, shell=None, istream=<valid stream>)
+wandb: wandb version 0.12.15 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.12
+wandb: Run data is saved locally in /opt/czl/libs/pymarl/wandb/run-20220426_044012-c4kap2mo
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run qmix_parallel_cramped_room_rnn_50
+wandb: ⭐️ View project at https://wandb.ai/hehey/overcooked-marl
+wandb: 🚀 View run at https://wandb.ai/hehey/overcooked-marl/runs/c4kap2mo
+Process Process-26:
+Process Process-21:
+Process Process-6:
+Process Process-8:
+Process Process-19:
+Process Process-14:
+Process Process-16:
+Process Process-11:
+Process Process-7:
+Process Process-5:
+Process Process-24:
+Process Process-10:
+Process Process-3:
+Process Process-15:
+Process Process-2:
+Process Process-18:
+Process Process-23:
+Process Process-22:
+Process Process-25:
+Process Process-9:
+Process Process-17:
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt
+KeyboardInterrupt
+KeyboardInterrupt
+KeyboardInterrupt
+KeyboardInterrupt
+KeyboardInterrupt
+KeyboardInterrupt
+KeyboardInterrupt
+KeyboardInterrupt
+KeyboardInterrupt
+KeyboardInterrupt
+KeyboardInterrupt
+Process Process-13:
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt
+Process Process-20:
+Process Process-4:
+Process Process-12:
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 217, in env_worker
+    cmd, data = remote.recv()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt
+Exception ignored in: <generator object tee_output_fd at 0x7f117d804dd0>
+Exception ignored in: <function Popen.__del__ at 0x7f1168efddd0>
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/subprocess.py", line 876, in __del__

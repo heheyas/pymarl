@@ -1,0 +1,84 @@
+{
+  "action_selector": "epsilon_greedy",
+  "agent": "rnn",
+  "agent_output_type": "q",
+  "batch_size": 128,
+  "batch_size_run": 1,
+  "buffer_cpu_only": true,
+  "buffer_size": 5000,
+  "checkpoint_path": "",
+  "critic_lr": 0.001,
+  "double_q": true,
+  "env": "overcooked",
+  "env_args": {
+    "env_config": {
+      "env_params": {
+        "horizon": 400
+      },
+      "mdp_params": {
+        "layout_name": "forced_coordination",
+        "rew_shaping_params": {
+          "DISH_DISP_DISTANCE_REW": 0,
+          "DISH_PICKUP_REWARD": 3,
+          "PLACEMENT_IN_POT_REW": 3,
+          "POT_DISTANCE_REW": 0,
+          "SOUP_DISTANCE_REW": 0,
+          "SOUP_PICKUP_REWARD": 5
+        }
+      },
+      "multi_agent_params": {
+        "bc_schedule": [
+          [
+            0,
+            0
+          ],
+          [
+            Infinity,
+            0
+          ]
+        ],
+        "reward_shaping_factor": 1.0,
+        "reward_shaping_horizon": 2500000,
+        "use_phi": false
+      }
+    }
+  },
+  "epsilon_anneal_time": 5000000,
+  "epsilon_finish": 0.05,
+  "epsilon_start": 1.0,
+  "evaluate": false,
+  "gamma": 0.99,
+  "grad_norm_clip": 10,
+  "hypernet_embed": 64,
+  "hypernet_layers": 2,
+  "label": "default_label",
+  "learner": "q_learner",
+  "learner_log_interval": 10000,
+  "load_step": 0,
+  "local_results_path": "results",
+  "log_interval": 10000,
+  "lr": 0.001,
+  "mac": "basic_mac",
+  "mixer": "qmix",
+  "mixing_embed_dim": 32,
+  "name": "qmix",
+  "obs_agent_id": true,
+  "obs_last_action": true,
+  "optim_alpha": 0.99,
+  "optim_eps": 1e-05,
+  "repeat_id": 1,
+  "rnn_hidden_dim": 32,
+  "runner": "episode",
+  "runner_log_interval": 10000,
+  "save_model": true,
+  "save_model_interval": 2000000,
+  "save_replay": false,
+  "seed": 0,
+  "t_max": 10000000,
+  "target_update_interval": 200,
+  "test_greedy": true,
+  "test_interval": 10000,
+  "test_nepisode": 32,
+  "use_cuda": true,
+  "use_tensorboard": true
+}

@@ -2,7 +2,6 @@ __MACOSX/*
 3rdparty/*
 .vscode/*
 *.pyc
-results/*
 src/results/*
 wandb/*
 src/pymarl/wandb/*

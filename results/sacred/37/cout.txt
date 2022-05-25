@@ -1,0 +1,148 @@
+[INFO 02:38:02] pymarl Running command 'my_main'
+[INFO 02:38:02] pymarl Started run with ID "37"
+[DEBUG 02:38:02] pymarl Starting Heartbeat
+[DEBUG 02:38:02] my_main Started
+[INFO 02:38:02] my_main Experiment Parameters:
+[INFO 02:38:02] my_main 
+
+{   'action_selector': 'epsilon_greedy',
+    'agent': 'rnn',
+    'agent_output_type': 'q',
+    'batch_size': 128,
+    'batch_size_run': 8,
+    'buffer_cpu_only': True,
+    'buffer_size': 5000,
+    'checkpoint_path': '',
+    'critic_lr': 0.001,
+    'double_q': True,
+    'env': 'overcooked',
+    'env_args': {   'env_config': {   'env_params': {   'horizon': 400},
+                                      'mdp_params': {   'layout_name': 'cramped_room',
+                                                        'rew_shaping_params': {   'DISH_DISP_DISTANCE_REW': 0,
+                                                                                  'DISH_PICKUP_REWARD': 3,
+                                                                                  'PLACEMENT_IN_POT_REW': 3,
+                                                                                  'POT_DISTANCE_REW': 0,
+                                                                                  'SOUP_DISTANCE_REW': 0,
+                                                                                  'SOUP_PICKUP_REWARD': 5}},
+                                      'multi_agent_params': {   'bc_schedule': [   [   0,
+                                                                                       0],
+                                                                                   [   inf,
+                                                                                       0]],
+                                                                'reward_shaping_factor': 1.0,
+                                                                'reward_shaping_horizon': 2500000,
+                                                                'use_phi': False}},
+                    'seed': 211613545},
+    'epsilon_anneal_time': 50000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'gamma': 0.99,
+    'grad_norm_clip': 10,
+    'label': 'default_label',
+    'learner': 'q_learner',
+    'learner_log_interval': 10000,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 10000,
+    'lr': 0.001,
+    'mac': 'basic_mac',
+    'mixer': 'qmix',
+    'mixing_embed_dim': 32,
+    'name': 'qmix_parallel',
+    'obs_agent_id': True,
+    'obs_last_action': True,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'repeat_id': 1,
+    'rnn_hidden_dim': 32,
+    'runner': 'parallel',
+    'runner_log_interval': 10000,
+    'save_model': False,
+    'save_model_interval': 2000000,
+    'save_replay': False,
+    'seed': 211613545,
+    't_max': 10000000,
+    'target_update_interval': 200,
+    'test_greedy': True,
+    'test_interval': 10000,
+    'test_nepisode': 32,
+    'use_cuda': True,
+    'use_tensorboard': False}
+
+[INFO 02:38:06] my_main Beginning training for 10000000 timesteps
+/opt/czl/libs/pymarl/src/components/episode_buffer.py:103: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  /opt/conda/conda-bld/pytorch_1646755953518/work/torch/csrc/utils/tensor_new.cpp:210.)
+  v = th.tensor(v, dtype=dtype, device=self.device)
+/opt/czl/libs/pymarl/src/components/episode_buffer.py:103: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  v = th.tensor(v, dtype=dtype, device=self.device)
+Process Process-1:
+Process Process-8:
+Process Process-7:
+Process Process-3:
+Process Process-2:
+Process Process-5:
+Process Process-6:
+Process Process-4:
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 250, in env_worker
+    remote.send(env.get_stats())
+AttributeError: 'OvercookedPyMarl' object has no attribute 'get_stats'
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 250, in env_worker
+    remote.send(env.get_stats())
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 250, in env_worker
+    remote.send(env.get_stats())
+AttributeError: 'OvercookedPyMarl' object has no attribute 'get_stats'
+AttributeError: 'OvercookedPyMarl' object has no attribute 'get_stats'
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+Traceback (most recent call last):
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 250, in env_worker
+    remote.send(env.get_stats())
+AttributeError: 'OvercookedPyMarl' object has no attribute 'get_stats'
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 250, in env_worker
+    remote.send(env.get_stats())
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 250, in env_worker
+    remote.send(env.get_stats())
+AttributeError: 'OvercookedPyMarl' object has no attribute 'get_stats'
+AttributeError: 'OvercookedPyMarl' object has no attribute 'get_stats'
+Traceback (most recent call last):
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 250, in env_worker
+    remote.send(env.get_stats())
+Traceback (most recent call last):
+AttributeError: 'OvercookedPyMarl' object has no attribute 'get_stats'
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/czl/libs/pymarl/src/runners/parallel_runner.py", line 250, in env_worker
+    remote.send(env.get_stats())
+AttributeError: 'OvercookedPyMarl' object has no attribute 'get_stats'

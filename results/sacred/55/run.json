@@ -1,0 +1,117 @@
+{
+  "artifacts": [],
+  "command": "my_main",
+  "experiment": {
+    "base_dir": "/opt/czl/libs/pymarl/src",
+    "dependencies": [
+      "munch==2.5.0",
+      "numpy==1.18.5",
+      "PyYAML==6.0",
+      "sacred==0.8.2",
+      "torch==1.11.0",
+      "wandb==0.12.12"
+    ],
+    "mainfile": "main.py",
+    "name": "pymarl",
+    "repositories": [
+      {
+        "commit": "f3df5e913eb8400368a6835c20027a7d60933347",
+        "dirty": true,
+        "url": "git@github.com:heheyas/pymarl.git"
+      },
+      {
+        "commit": "f3df5e913eb8400368a6835c20027a7d60933347",
+        "dirty": true,
+        "url": "git@github.com:heheyas/pymarl.git"
+      },
+      {
+        "commit": "f3df5e913eb8400368a6835c20027a7d60933347",
+        "dirty": true,
+        "url": "git@github.com:heheyas/pymarl.git"
+      }
+    ],
+    "sources": [
+      [
+        "main.py",
+        "_sources/main_8f5537994f565fc4346a8040761c4768.py"
+      ],
+      [
+        "run.py",
+        "_sources/run_1636e4bc4a4b1a6c654a0af329d0f889.py"
+      ],
+      [
+        "utils/logging.py",
+        "_sources/logging_9f1b065c988df2da148265f4a5ae5000.py"
+      ]
+    ]
+  },
+  "fail_trace": [
+    "Traceback (most recent call last):\n",
+    "  File \"/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/site-packages/sacred/config/captured_function.py\", line 42, in captured_function\n    result = wrapped(*args, **kwargs)\n",
+    "  File \"src/main.py\", line 37, in my_main\n    run(_run, config, _log)\n",
+    "  File \"/opt/czl/libs/pymarl/src/run.py\", line 57, in run\n    run_sequential(args=args, logger=logger)\n",
+    "  File \"/opt/czl/libs/pymarl/src/run.py\", line 201, in run_sequential\n    runner.run(test_mode=True)\n",
+    "  File \"/opt/czl/libs/pymarl/src/runners/episode_runner.py\", line 103, in run\n    cur_stats.update({k: env_info.get(k, 0) + env_info[k] for k in set(cur_stats) | set(env_info)})\n",
+    "  File \"/opt/czl/libs/pymarl/src/runners/episode_runner.py\", line 103, in <dictcomp>\n    cur_stats.update({k: env_info.get(k, 0) + env_info[k] for k in set(cur_stats) | set(env_info)})\n",
+    "KeyError: 'n_episodes'\n"
+  ],
+  "heartbeat": "2022-04-26T06:23:26.659626",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Xeon(R) Silver 4214 CPU @ 2.20GHz",
+    "gpus": {
+      "driver_version": "470.103.01",
+      "gpus": [
+        {
+          "model": "NVIDIA GeForce RTX 3090",
+          "persistence_mode": false,
+          "total_memory": 24268
+        },
+        {
+          "model": "NVIDIA GeForce RTX 3090",
+          "persistence_mode": false,
+          "total_memory": 24268
+        }
+      ]
+    },
+    "hostname": "dell",
+    "os": [
+      "Linux",
+      "Linux-4.15.0-169-generic-x86_64-with-debian-buster-sid"
+    ],
+    "python_version": "3.7.11"
+  },
+  "meta": {
+    "command": "my_main",
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [],
+      "help": false,
+      "with": false
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2022-04-26T06:22:51.360639",
+  "status": "FAILED",
+  "stop_time": "2022-04-26T06:23:26.663244"
+}

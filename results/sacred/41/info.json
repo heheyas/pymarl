@@ -1,0 +1,54 @@
+{
+  "ep_length_mean": [
+    800.0
+  ],
+  "ep_length_mean_T": [
+    3200
+  ],
+  "ep_shaped_r_mean": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 8.125
+    }
+  ],
+  "ep_shaped_r_mean_T": [
+    3200
+  ],
+  "ep_sparse_r_mean": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 2.5
+    }
+  ],
+  "ep_sparse_r_mean_T": [
+    3200
+  ],
+  "epsilon": [
+    1.0
+  ],
+  "epsilon_T": [
+    3200
+  ],
+  "return_mean": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 6.5625
+    }
+  ],
+  "return_mean_T": [
+    3200
+  ],
+  "return_std": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 8.483209519397715
+    }
+  ],
+  "return_std_T": [
+    3200
+  ]
+}

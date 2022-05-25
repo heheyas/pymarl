@@ -1,0 +1,125 @@
+{
+  "artifacts": [],
+  "command": "my_main",
+  "experiment": {
+    "base_dir": "/opt/czl/libs/pymarl/src",
+    "dependencies": [
+      "munch==2.5.0",
+      "numpy==1.18.5",
+      "PyYAML==5.4.1",
+      "sacred==0.8.2",
+      "torch==1.11.0",
+      "wandb==0.12.12"
+    ],
+    "mainfile": "main.py",
+    "name": "pymarl",
+    "repositories": [
+      {
+        "commit": "3f9fde8c03f4c4121ea351fb8e3b16549980ca5a",
+        "dirty": true,
+        "url": "git@github.com:heheyas/pymarl.git"
+      },
+      {
+        "commit": "3f9fde8c03f4c4121ea351fb8e3b16549980ca5a",
+        "dirty": true,
+        "url": "git@github.com:heheyas/pymarl.git"
+      },
+      {
+        "commit": "3f9fde8c03f4c4121ea351fb8e3b16549980ca5a",
+        "dirty": true,
+        "url": "git@github.com:heheyas/pymarl.git"
+      }
+    ],
+    "sources": [
+      [
+        "main.py",
+        "_sources/main_8f5537994f565fc4346a8040761c4768.py"
+      ],
+      [
+        "run.py",
+        "_sources/run_1636e4bc4a4b1a6c654a0af329d0f889.py"
+      ],
+      [
+        "utils/logging.py",
+        "_sources/logging_9f1b065c988df2da148265f4a5ae5000.py"
+      ]
+    ]
+  },
+  "fail_trace": [
+    "Traceback (most recent call last):\n",
+    "  File \"/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/site-packages/sacred/config/captured_function.py\", line 42, in captured_function\n    result = wrapped(*args, **kwargs)\n",
+    "  File \"src/main.py\", line 37, in my_main\n    run(_run, config, _log)\n",
+    "  File \"/opt/czl/libs/pymarl/src/run.py\", line 57, in run\n    run_sequential(args=args, logger=logger)\n",
+    "  File \"/opt/czl/libs/pymarl/src/run.py\", line 126, in run_sequential\n    learner.cuda()\n",
+    "  File \"/opt/czl/libs/pymarl/src/learners/q_learner.py\", line 125, in cuda\n    self.mac.cuda()\n",
+    "  File \"/opt/czl/libs/pymarl/src/controllers/basic_controller.py\", line 66, in cuda\n    self.agent.cuda()\n",
+    "  File \"/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/site-packages/torch/nn/modules/module.py\", line 688, in cuda\n    return self._apply(lambda t: t.cuda(device))\n",
+    "  File \"/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/site-packages/torch/nn/modules/module.py\", line 578, in _apply\n    module._apply(fn)\n",
+    "  File \"/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/site-packages/torch/nn/modules/module.py\", line 601, in _apply\n    param_applied = fn(param)\n",
+    "  File \"/opt/czl/anaconda3/envs/harl_modified/lib/python3.7/site-packages/torch/nn/modules/module.py\", line 688, in <lambda>\n    return self._apply(lambda t: t.cuda(device))\n",
+    "RuntimeError: CUDA error: out of memory\nCUDA kernel errors might be asynchronously reported at some other API call,so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1.\n"
+  ],
+  "heartbeat": "2022-04-28T03:33:06.412206",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Xeon(R) Silver 4214 CPU @ 2.20GHz",
+    "gpus": {
+      "driver_version": "470.103.01",
+      "gpus": [
+        {
+          "model": "NVIDIA GeForce RTX 3090",
+          "persistence_mode": false,
+          "total_memory": 24268
+        },
+        {
+          "model": "NVIDIA GeForce RTX 3090",
+          "persistence_mode": false,
+          "total_memory": 24268
+        }
+      ]
+    },
+    "hostname": "dell",
+    "os": [
+      "Linux",
+      "Linux-4.15.0-169-generic-x86_64-with-debian-buster-sid"
+    ],
+    "python_version": "3.7.11"
+  },
+  "meta": {
+    "command": "my_main",
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "agent=mlp",
+        "env_args.env_config.mdp_params.layout_name=coordination_ring",
+        "seed=3"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2022-04-28T03:32:49.325597",
+  "status": "FAILED",
+  "stop_time": "2022-04-28T03:33:08.304208"
+}
